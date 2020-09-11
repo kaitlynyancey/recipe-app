@@ -9,7 +9,7 @@
 <body>
     <section>
         <h1>Recipe Hero</h1>
-        <p>"Lettuce" help you use up those leftover groceries sitting in your fridge!</p>
+        <p>Find recipes based off the leftover food you have in your fridge and pantry.</p>
     </section>
     <section>
         <h3>Select your groceries</h3>
@@ -22,7 +22,15 @@
             <label for="beef">Beef</label>
             <br>
             <button type="submit">Find Me a Recipe!</button>
+            <button type="reset">Reset Selections</button>
         </form>
+    </section>
+    
+    <!--Results section-->
+    <section id = "results" class = "hidden">
+        <h2>Here are your results:</h2>
+        <ul id="results-list">
+        </ul>
     </section>
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="script.js"></script>
