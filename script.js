@@ -23,7 +23,7 @@ function formSubmit(){
 function findRecipe(checkedItems){
     const params = {
         ingredients: checkedItems.join(),
-        number: "10",
+        number: "5",
         limitLicense: "true",
         ranking: "1",
         ignorePantry: "true",
@@ -53,33 +53,27 @@ function displayResults(response){
     for (let i=0; i<response.length; i++){
         var title = response[i].title.toLowerCase().replace(/\s/g,'-');
         var linkTitle = "https://spoonacular.com/" + title + "-" + response[i].id;
-        //console.log(linkTitle);
+        //Get a list of selected ingredients used in the recipe
+        var usedIngredients = Object.keys(response[i].usedIngredients).map(x => `${response[i].usedIngredients[x].name}`)
+        //Get a list of missing ingredients used in the recipe
+        var missedIngredients = Object.keys(response[i].missedIngredients).map(x => `${response[i].missedIngredients[x].name}`)
+        console.log(missedIngredients);
         $('#results-list').append(
             `<li>
                 <h3>${response[i].title}</h3>
-                <a href="${linkTitle}">${linkTitle}</a><br>
-                <img src=${response[i].image}>
+                <p>Link to Recipe:
+                <a href="${linkTitle}" target="_blank">${linkTitle}</a><br>
+                <p>Used ingredients: <b>${usedIngredients.join(", ")}</b></p>
+                <p>Ingredients still needed: <b>${missedIngredients.join(", ")}</b></p> 
+                <img src=${response[i].image}></p>
             </li>`
         )
+        
 
     }
 
 }
 
-//function to get the recipe details for each id
-/*function getRecipeLink(id){
-    console.log(id);
-    return fetch(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${key}`)
-    .then(response => {
-        if (response.ok){
-            return response.json();
-        }
-        throw new Error(response.statusText)
-    })
-    .then(responseJson => console.log(responseJson.spoonacularSourceUrl))
-    .catch(error => alert('Something went wrong. Try again.'));
-}
-    */
 
 //function to format the query parameters into the required string to make the API call
 function formatParams(params){
@@ -87,5 +81,20 @@ function formatParams(params){
     return query.join('&');
 }
 
+//function to reset selections and results
+function resetPage(){
+    $("button.js-reset").on("click", function(event){
+        event.preventDefault();
+        $('#results').addClass('hidden');
+        console.log("reset");
+        $('input[type="checkbox"]:checked').prop('checked',false);
+    })
+}
+
 //call function
-$(formSubmit);
+function callFunctions(){
+    formSubmit();
+    resetPage();
+}
+
+$(callFunctions);
