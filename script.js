@@ -13,6 +13,7 @@ function formSubmit(){
         $(".food option:selected").each(function(){
             checkedItems.push($(this).val());
         });
+        console.log(checkedItems);
         var num = $("#num").val();
         if(!checkedItems.length){
             $("#error").removeClass("hidden");
