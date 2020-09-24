@@ -9,31 +9,33 @@ const searchURL = 'https://api.spoonacular.com/recipes/findByIngredients';
 function formSubmit(){
     $('form').submit(event => {
         event.preventDefault();
-        console.log("test");
         var checkedItems = []; 
-        $('.foodSelect:checked').each(function(){
+        $(".food option:selected").each(function(){
             checkedItems.push($(this).val());
         });
-        //console.log(checkedItems);
-        findRecipe(checkedItems);
+        var num = $("#num").val();
+        if(!checkedItems.length){
+            $("#error").removeClass("hidden");
+        }
+        else{
+            $("#error").addClass("hidden");
+            findRecipe(checkedItems,num);
+        }
     });
 }
 
 //function to make call to the "spoonacular" API
-function findRecipe(checkedItems){
+function findRecipe(checkedItems, num){
     const params = {
         ingredients: checkedItems.join(),
-        number: "5",
+        number: num,
         limitLicense: "true",
         ranking: "1",
         ignorePantry: "true",
         apiKey: key
     };
-    //console.log(params);
     const queryString = formatParams(params);
     const url = searchURL + '?' + queryString;
-    //console.log(url);
-
     fetch(url)
     .then(response => {
         if (response.ok){
@@ -57,7 +59,6 @@ function displayResults(response){
         var usedIngredients = Object.keys(response[i].usedIngredients).map(x => `${response[i].usedIngredients[x].name}`)
         //Get a list of missing ingredients used in the recipe
         var missedIngredients = Object.keys(response[i].missedIngredients).map(x => `${response[i].missedIngredients[x].name}`)
-        console.log(missedIngredients);
         $('#results-list').append(
             `<li>
                 <h3>${response[i].title}</h3>
@@ -68,10 +69,7 @@ function displayResults(response){
                 <img src=${response[i].image}></p>
             </li>`
         )
-        
-
     }
-
 }
 
 
@@ -84,10 +82,8 @@ function formatParams(params){
 //function to reset selections and results
 function resetPage(){
     $("button.js-reset").on("click", function(event){
-        event.preventDefault();
         $('#results').addClass('hidden');
-        console.log("reset");
-        $('input[type="checkbox"]:checked').prop('checked',false);
+        $('#error').addClass('hidden');
     })
 }
 
