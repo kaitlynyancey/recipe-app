@@ -12,3 +12,65 @@
     flex-wrap: wrap;
     justify-content: space-between;
 }
+
+body{ 
+    margin: 0;
+    background-color: #F8F4E3;
+}
+
+header{
+    background: url("pictures/cooking-pic-3.jpg") no-repeat center;
+    margin: 0 auto;
+    background-size: cover;
+    height: 400px;
+    padding: 50px;
+}
+
+h1{
+    font-size: 48px;   
+    font-family: "lobster";
+}
+
+h2, h3, p{
+    font-family: "Roboto";
+}
+
+header div{
+    background-color: #F8F4E3;
+    box-shadow: 10px 10px;
+    max-width: 400px;
+    min-width: 200px;
+    text-align: center;
+}
+
+.wrapper{
+    width: 60%;
+    margin: 0 auto;
+}
+
+section.intro{
+    background-color: #e591a6;
+    padding: 20px;
+    border: 1pt solid black;
+}
+
+section.review{
+    border: 1pt solid black;
+    margin: 20px 0;
+    padding: 0 20px 20px 20px;
+    background-color: rgb(173, 226, 226);
+}
+
+li.recipe{
+    border: 1pt solid black;
+    box-shadow: 10px 10px 5px grey;
+    list-style-type: none;
+    padding: 20px;
+    margin: 30px 0;
+    background: url(pictures/linedpaper.png) center;
+    max-width: 500px;
+}
+
+li img{
+    width: 100%;
+}

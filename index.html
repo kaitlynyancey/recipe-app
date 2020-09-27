@@ -5,181 +5,197 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe Hero App</title>
     <link rel="stylesheet" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section>
-        <h1>Recipe Hero</h1>
-        <p>Let us help you save dinner! Find delicious recipes based off the leftover food you already have in your fridge.</p> 
-        <p>It's easy! Just follow the steps below and you'll be cooking in no time.</p>
-    </section>
-    <section>
-        <h2>Step 1: Select your groceries</h2>
-        <p>Tip: To select multiple ingredients in a category, first hold down the "ctrl" button, and then make your selections.</p>
-        <form>
-            <section class="group"> 
-                <section class="item">
-                    <h3>Meat/Protein</h3>
-                    <select class="food" id="protein" name="protein" multiple>
-                        <option value = "chicken-breast">Chicken Breast</option>
-                        <option value = "chicken-thigh">Chicken Thigh</option>
-                        <option value = "chicken-leg">Chicken Legs</option>
-                        <option value = "chicken-wing">Chicken Wings</option>
-                        <option value = "turkey-breast">Turkey Breast</option>
-                        <option value = "ground-turkey">Ground Turkey</option>
-                        <option value = "pork-loin">Pork Loin</option>
-                        <option value = "bacon">Bacon</option>
-                        <option value = "ham">Ham</option>
-                        <option value = "pork-chop">Pork Chop</option>
-                        <option value = "sausage">Sausage</option>
-                        <option value = "ground-beef">Ground Beef</option>
-                        <option value = "roast-beef">Roast Beef</option>
-                        <option value = "stew-beef">Stew Beef</option>
-                        <option value = "steak">Steak</option>
-                        <option value = "lamb">Lamb Meat</option>
-                        <option value = "tuna">Tuna</option>
-                        <option value = "salmon">Salmon</option>
-                        <option value = "white-fish">White Fish</option>
-                        <option value = "shrimp">Shrimp</option>
-                        <option value = "lobster">Lobster</option>
-                        <option value = "crab">Crab</option>
-                        <option value = "tofu">Tofu</option>
-                        <option value = "eggs">Eggs</option>
-                    </select>
+    <header>
+        <div>
+            <h1>Recipe Hero</h1>
+        </div>
+    </header>
+    <main>
+        <section class="intro">
+            <div class="wrapper">
+                <h2>Welcome to Recipe Hero.</h2>
+                <p>Let us help you save dinner! Find delicious recipes based off the leftover food you already have in your fridge.</p> 
+                <p>It's easy! Just follow the steps below and you'll be cooking in no time.</p>
+            </div>
+        </section>
+        <section class="wrapper">
+            <h2>Step 1: Select your groceries</h2>
+            <p>Tip: To select multiple ingredients in a category, first hold down the "ctrl" button, and then make your selections.</p>
+            <form>
+                <section class="group"> 
+                    <section class="item">
+                        <h3>Meat/Protein</h3>
+                        <select class="food" id="protein" name="protein" size="5">
+                            <option value = "chicken">Chicken Breast</option>
+                            <option value = "chicken-thigh">Chicken Thigh</option>
+                            <option value = "chicken-leg">Chicken Legs</option>
+                            <option value = "chicken-wing">Chicken Wings</option>
+                            <option value = "turkey-breast">Turkey Breast</option>
+                            <option value = "ground-turkey">Ground Turkey</option>
+                            <option value = "pork-loin">Pork Loin</option>
+                            <option value = "bacon">Bacon</option>
+                            <option value = "ham">Ham</option>
+                            <option value = "pork-chop">Pork Chop</option>
+                            <option value = "sausage">Sausage</option>
+                            <option value = "ground-beef">Ground Beef</option>
+                            <option value = "roast-beef">Roast Beef</option>
+                            <option value = "stew-beef">Stew Beef</option>
+                            <option value = "steak">Steak</option>
+                            <option value = "lamb">Lamb Meat</option>
+                            <option value = "tuna">Tuna</option>
+                            <option value = "salmon">Salmon</option>
+                            <option value = "white-fish">White Fish</option>
+                            <option value = "shrimp">Shrimp</option>
+                            <option value = "lobster">Lobster</option>
+                            <option value = "crab">Crab</option>
+                            <option value = "tofu">Tofu</option>
+                            <option value = "eggs">Eggs</option>
+                        </select>
+                    </section>
+                    <section class="item">
+                        <h3>Vegetables</h3>
+                        <select class="food" id="vegetable" name="vegetable" size="5">
+                            <option value = "asparagus">Asparagus</option>
+                            <option value = "beets">Beets</option>
+                            <option value = "bell-pepper">Bell Pepper</option>
+                            <option value = "broccoli">Broccoli</option>
+                            <option value = "brussel-sprouts">Brussel Sprouts</option>
+                            <option value = "cabbage">Cabbage</option>
+                            <option value = "carrots">Carrots</option>
+                            <option value = "cauliflower">Cauliflower</option>
+                            <option value = "celery">Celery</option>
+                            <option value = "chard">Chard</option>
+                            <option value = "cucumber">Cucumber</option>
+                            <option value = "eggplant">Eggplant</option>
+                            <option value = "green-beans">Green Beans</option>
+                            <option value = "green-onion">Green Onion</option>
+                            <option value = "jalapeno">Jalapeno Pepper</option>
+                            <option value = "kale">Kale</option>
+                            <option value = "lettuce">Lettuce</option>
+                            <option value = "onion">Onion</option>
+                            <option value = "parsnip">Parsnip</option>
+                            <option value = "peas">Peas</option>
+                            <option value = "potato">Potato</option>
+                            <option value = "radish">Radish</option>
+                            <option value = "spinach">Spinach</option>
+                            <option value = "sweet-potato">Sweet Potato</option>
+                            <option value = "tomato">Tomato</option>
+                            <option value = "turnip">Turnip</option>
+                            <option value = "zucchini">Zucchini</option>
+                        </select>
+                    </section>
+                    <section class="item">
+                        <h3>Fruit</h3>
+                        <select class="food" id="fruit" name="fruit" size="5">
+                            <option value = "apple">Apple</option>
+                            <option value = "avocado">Avocado</option>
+                            <option value = "banana">Banana</option>
+                            <option value = "blueberry">Blueberry</option>
+                            <option value = "cherry">Cherry</option>
+                            <option value = "cranberry">Cranberry</option>
+                            <option value = "grapes">Grapes</option>
+                            <option value = "grapefruit">Grapefruit</option>
+                            <option value = "lemon">Lemon</option>
+                            <option value = "lime">Lime</option>
+                            <option value = "mango">Mango</option>
+                            <option value = "melon">Melon</option>
+                            <option value = "orange">Orange</option>
+                            <option value = "peach">Peach</option>
+                            <option value = "pear">Pear</option>
+                            <option value = "pineapple">Pineapple</option>
+                            <option value = "plantain">Plantain</option>
+                            <option value = "plum">Plum</option>
+                            <option value = "strawberry">Strawberry</option>
+                        </select>
+                    </section>
+                    <section class="item">
+                        <h3>Grains/Beans</h3>
+                        <select class="food" id="grains" name="grains" size="5">
+                            <option value = "bread">Bread</option>
+                            <option value = "rice">Rice</option>
+                            <option value = "quinoa">Quinoa</option>
+                            <option value = "oats">Oats</option>
+                            <option value = "corn">Pasta</option>
+                            <option value = "pasta">Pasta</option>
+                            <option value = "lentils">Lentils</option>
+                            <option value = "black-beans">Black Beans</option>
+                            <option value = "garbanzo-beans">Garbanzo Beans</option>
+                            <option value = "kidney-beans">Kidney Beans</option>
+                            <option value = "pinto-beans">Pinto Beans</option>
+                            <option value = "cannellini-beans">Cannellini Beans</option>
+                            <option value = "edamame">Edamame/Soybeans</option>
+                        </select>
+                    </section>
+                    <section class="item">
+                        <h3>Dairy</h3>
+                        <select class="food" id="dairy" name="dairy" size="5">
+                            <option value = "milk">Milk</option>
+                            <option value = "heavy-cream">Heavy Cream</option>
+                            <option value = "sour-cream">Sour Cream</option>
+                            <option value = "cheddar-cheese">Cheddar Cheese</option>
+                            <option value = "mozzarella-cheese">Mozzarella Cheese</option>
+                            <option value = "parmesan-cheese">Parmesan Cheese</option>
+                            <option value = "swiss-cheese">Swiss Cheese</option>
+                            <option value = "goat-cheese">Goat Cheese</option>
+                            <option value = "butter">Butter</option>
+                            <option value = "cream-cheese">Cream Cheese</option>
+                            <option value = "yogurt">Yogurt</option>
+                        </select>
+                    </section>
+                    <section class="item">
+                        <h3>Other</h3>
+                        <select class="food" id="food" name="other" size="5">
+                            <option value = "garlic">Garlic</option>
+                            <option value = "mushroom">Mushrooms</option>
+                            <option value = "ginger">Ginger</option>
+                            <option value = "olives">Olives</option>
+                            <option value = "basil">Basil</option>
+                            <option value = "parsley">Parsley</option>
+                            <option value = "dill">Dill</option>
+                            <option value = "sage">Sage</option>
+                            <option value = "rosemary">Rosemary</option>
+                            <option value = "chicken-broth">Chicken Broth</option>
+                            <option value = "beef-broth">Beef Broth</option>
+                            <option value = "vegetable-broth">Vegetable Broth</option>
+                            <option value = "soy-sauce">Soy Sauce</option>
+                        </select>
+                    </section>
                 </section>
-                <section class="item">
-                    <h3>Vegetables</h3>
-                    <select class="food" id="vegetable" name="vegetable" multiple>
-                        <option value = "asparagus">Asparagus</option>
-                        <option value = "beets">Beets</option>
-                        <option value = "bell-pepper">Bell Pepper</option>
-                        <option value = "broccoli">Broccoli</option>
-                        <option value = "brussel-sprouts">Brussel Sprouts</option>
-                        <option value = "cabbage">Cabbage</option>
-                        <option value = "carrots">Carrots</option>
-                        <option value = "cauliflower">Cauliflower</option>
-                        <option value = "celery">Celery</option>
-                        <option value = "chard">Chard</option>
-                        <option value = "cucumber">Cucumber</option>
-                        <option value = "eggplant">Eggplant</option>
-                        <option value = "green-beans">Green Beans</option>
-                        <option value = "green-onion">Green Onion</option>
-                        <option value = "jalapeno">Jalapeno Pepper</option>
-                        <option value = "kale">Kale</option>
-                        <option value = "lettuce">Lettuce</option>
-                        <option value = "onion">Onion</option>
-                        <option value = "parsnip">Parsnip</option>
-                        <option value = "peas">Peas</option>
-                        <option value = "potato">Potato</option>
-                        <option value = "radish">Radish</option>
-                        <option value = "spinach">Spinach</option>
-                        <option value = "sweet-potato">Sweet Potato</option>
-                        <option value = "tomato">Tomato</option>
-                        <option value = "turnip">Turnip</option>
-                        <option value = "zucchini">Zucchini</option>
-                    </select>
-                </section>
-                <section class="item">
-                    <h3>Fruit</h3>
-                    <select class="food" id="fruit" name="fruit" multiple>
-                        <option value = "apple">Apple</option>
-                        <option value = "avocado">Avocado</option>
-                        <option value = "banana">Banana</option>
-                        <option value = "blueberry">Blueberry</option>
-                        <option value = "cherry">Cherry</option>
-                        <option value = "cranberry">Cranberry</option>
-                        <option value = "grapes">Grapes</option>
-                        <option value = "grapefruit">Grapefruit</option>
-                        <option value = "lemon">Lemon</option>
-                        <option value = "lime">Lime</option>
-                        <option value = "mango">Mango</option>
-                        <option value = "melon">Melon</option>
-                        <option value = "orange">Orange</option>
-                        <option value = "peach">Peach</option>
-                        <option value = "pear">Pear</option>
-                        <option value = "pineapple">Pineapple</option>
-                        <option value = "plantain">Plantain</option>
-                        <option value = "plum">Plum</option>
-                        <option value = "strawberry">Strawberry</option>
-                    </select>
-                </section>
-                <section class="item">
-                    <h3>Grains/Beans</h3>
-                    <select class="food" id="grains" name="grains" multiple>
-                        <option value = "bread">Bread</option>
-                        <option value = "rice">Rice</option>
-                        <option value = "quinoa">Quinoa</option>
-                        <option value = "oats">Oats</option>
-                        <option value = "corn">Pasta</option>
-                        <option value = "pasta">Pasta</option>
-                        <option value = "lentils">Lentils</option>
-                        <option value = "black-beans">Black Beans</option>
-                        <option value = "garbanzo-beans">Garbanzo Beans</option>
-                        <option value = "kidney-beans">Kidney Beans</option>
-                        <option value = "pinto-beans">Pinto Beans</option>
-                        <option value = "cannellini-beans">Cannellini Beans</option>
-                        <option value = "edamame">Edamame/Soybeans</option>
-                    </select>
-                </section>
-                <section class="item">
-                    <h3>Dairy</h3>
-                    <select class="food" id="dairy" name="dairy" multiple>
-                        <option value = "milk">Milk</option>
-                        <option value = "heavy-cream">Heavy Cream</option>
-                        <option value = "sour-cream">Sour Cream</option>
-                        <option value = "cheddar-cheese">Cheddar Cheese</option>
-                        <option value = "mozzarella-cheese">Mozzarella Cheese</option>
-                        <option value = "parmesan-cheese">Parmesan Cheese</option>
-                        <option value = "swiss-cheese">Swiss Cheese</option>
-                        <option value = "goat-cheese">Goat Cheese</option>
-                        <option value = "butter">Butter</option>
-                        <option value = "cream-cheese">Cream Cheese</option>
-                        <option value = "yogurt">Yogurt</option>
-                    </select>
-                </section>
-                <section class="item">
-                    <h3>Other</h3>
-                    <select class="food" id="food" name="other" multiple>
-                        <option value = "garlic">Garlic</option>
-                        <option value = "mushroom">Mushrooms</option>
-                        <option value = "ginger">Ginger</option>
-                        <option value = "olives">Olives</option>
-                        <option value = "basil">Basil</option>
-                        <option value = "parsley">Parsley</option>
-                        <option value = "dill">Dill</option>
-                        <option value = "sage">Sage</option>
-                        <option value = "rosemary">Rosemary</option>
-                        <option value = "chicken-broth">Chicken Broth</option>
-                        <option value = "beef-broth">Beef Broth</option>
-                        <option value = "vegetable-broth">Vegetable Broth</option>
-                        <option value = "soy-sauce">Soy Sauce</option>
-                    </select>
-                </section>
-            </section>
-            <br>
-            <section>
-                <label for="num">Number of Results to Display:</label>
-                <input type="number" id="num" name="num" min="1" max="30" value="5">
                 <br>
-                <button type="reset" class="js-reset">Reset Selections</button>
-            </section>
-            <section>
-                <h2>Step 2: Hit that button</h2>
-                <button type="submit">Find Me a Recipe!</button>
-            </section>     
-        </form>
-    </section>
-    
-    <!--Error section-->
-    <section id = "error" class = "hidden">
-        <h3>Please select your ingredients!</h3>
-    </section>
+                <section>
+                    <label for="num">Number of Results to Display:</label>
+                    <input type="number" id="num" name="num" min="1" max="30" value="5">
+                    <br>
+                    <button type="reset" class="js-reset">Reset Selections</button>
+                </section>
+                <section class="review">
+                    <h2>Step 2: Review and Submit</h2>
+                    <p>Here are your ingredients selected:</p>
+                    <ul id="selection-review">
+                    </ul>
+                    <button type="submit">Find Me a Recipe!</button>
+                </section>     
+            </form>
+        </section>
+        
+        <!--Error section-->
+        <section id = "error" class = "hidden wrapper">
+            <h3>Please select your ingredients!</h3>
+        </section>
 
-    <!--Results section-->
-    <section id = "results" class = "hidden">
-        <h2>Step 3: Choose your recipe!</h2>
-        <ul id="results-list">
-        </ul>
-    </section>
+        <!--Results section-->
+        <section id = "results" class = "hidden">
+            <div class="wrapper">
+                <h2>Step 3: Choose your recipe!</h2>
+                <ul id="results-list">
+                </ul>
+            </div>
+        </section>
+</main>
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
