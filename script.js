@@ -10,7 +10,7 @@ function formSubmit() {
     $('form').submit(event => {
         event.preventDefault();
         var checkedItems = [];
-        $(".food option:selected").each(function () {
+        $(".food:checked").each(function () {
             checkedItems.push($(this).val());
         });
         console.log(checkedItems);
@@ -105,7 +105,7 @@ function resetPage() {
 
 //Section function
 function onSelect() {
-    $('select').on('click keypress', function (event) {
+    $('input').on('click keypress', function (event) {
         if(checkClick(event) === true){
             console.log("clicked")
             var selection = this.value;
@@ -113,7 +113,7 @@ function onSelect() {
             if(STORE[i]===selection){
                 STORE.splice(i,1);
                 console.log(STORE)
-                $(`#${selection}`).remove();
+                $(`li`).remove(`#${selection}`);
                 return 
             }
         }
@@ -139,12 +139,18 @@ function checkClick(event){
     }
 }
 
+function showList(){
+    $('button.show').on('click', function(){
+        $(this).siblings('div').toggleClass('hidden')
+    })
+}
 
 //call function
 function callFunctions() {
     formSubmit();
     resetPage();
     onSelect();
+    showList();
 }
 
 $(callFunctions);

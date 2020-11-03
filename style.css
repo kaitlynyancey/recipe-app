@@ -31,7 +31,7 @@ h1{
     font-family: "lobster";
 }
 
-h2, h3, p{
+h2, h3, p, label, button{
     font-family: "Roboto";
 }
 
@@ -73,4 +73,14 @@ li.recipe{
 
 li img{
     width: 100%;
+}
+
+.button{
+    border: 2px solid #e591a6;
+    background-color: white;
+    transition-duration: 0.4s;
+}
+
+.button:hover{
+    background-color:#e591a6;
 }
