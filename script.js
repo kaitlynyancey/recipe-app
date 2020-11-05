@@ -1,7 +1,7 @@
 'use strict'
 
 //constant query parameters for API request
-const key = "8486d9ea749948cda3e57cfa94dab980";
+const key = '8486d9ea749948cda3e57cfa94dab980';
 const searchURL = 'https://api.spoonacular.com/recipes/findByIngredients';
 const STORE = [];
 
@@ -10,16 +10,18 @@ function formSubmit() {
     $('form').submit(event => {
         event.preventDefault();
         var checkedItems = [];
-        $(".food:checked").each(function () {
+        //add each checked item to the checkItems array
+        $('.food:checked').each(function () {
             checkedItems.push($(this).val());
         });
-        console.log(checkedItems);
-        var num = $("#num").val();
+        //get value for number of search items the user wants to return
+        var num = $('#num').val();
+        //check if items were checked, and display error message if nothing was selected
         if (!checkedItems.length) {
-            $("#error").removeClass("hidden");
+            $('#error').removeClass('hidden');
         }
         else {
-            $("#error").addClass("hidden");
+            $('#error').addClass('hidden');
             findRecipe(checkedItems, num);
         }
     });
@@ -30,9 +32,9 @@ function findRecipe(checkedItems, num) {
     const params = {
         ingredients: checkedItems.join(),
         number: num,
-        limitLicense: "true",
-        ranking: "1",
-        ignorePantry: "true",
+        limitLicense: 'true',
+        ranking: '1',
+        ignorePantry: 'true',
         apiKey: key
     };
     const queryString = formatParams(params);
@@ -50,7 +52,7 @@ function findRecipe(checkedItems, num) {
 
 //Update the DOM with the recipe search results
 function displayResults(response) {
-    console.log(response);
+    //empty any previous recipe searches
     $('#results-list').empty();
     $('#results').removeClass('hidden');
 
@@ -103,44 +105,40 @@ function resetPage() {
     })
 }
 
-//Section function
+//Selection function to track the ingredients the user has checked
 function onSelect() {
-    $('input').on('click keypress', function (event) {
-        if(checkClick(event) === true){
-            console.log("clicked")
-            var selection = this.value;
-        for (let i = 0; i < STORE.length; i++){
-            if(STORE[i]===selection){
-                STORE.splice(i,1);
-                console.log(STORE)
+    //listen for click or spacebar keypress
+    $('.food').on('click', function (event) {
+        var selection = this.value;
+        //loop through selected ingredients in STORE to see if current checked ingredient has already been selected
+        for (let i = 0; i < STORE.length; i++) {
+            //if ingredient is already in the STORE, remove it from STORE, since this represents user unselecting checkbox
+            if (STORE[i] === selection) {
+                STORE.splice(i, 1);
                 $(`li`).remove(`#${selection}`);
-                return 
+                //if the STORE array is now empty, display the default message
+                if (!STORE.length) {
+                    $('#list-default').removeClass('hidden')
+                }
+                return
             }
         }
+        //if the selected ingredient is not already in STORE, add it to the STORE array
         STORE.push(selection);
-                var formatSelection = selection.replace(/-/g, " ");
-                console.log(STORE);
-                $("#selection-review").append(
-                   `<li id="${selection}">${formatSelection}</li>`);
-        }
-        
+        var formatSelection = selection.replace(/-/g, " ");
+        //display the selected ingredient
+        $("#selection-review").append(
+            `<li id="${selection}">${formatSelection}</li>`);
+        //remove the default message
+        $('#list-default').addClass('hidden')
+
     })
 }
 
-function checkClick(event){
-    if(event.type === 'click'){
-        return true;
-    }
-    else if(event.type === 'keypress' && event.keyCode === 32){
-        return true;
-    }
-    else{
-        return false;
-    }
-}
 
-function showList(){
-    $('button.show').on('click', function(){
+//this function toggles the ingredient list visibility for each category
+function showList() {
+    $('button.show').on('click', function () {
         $(this).siblings('div').toggleClass('hidden')
     })
 }

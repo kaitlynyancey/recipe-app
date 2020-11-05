@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe Hero App</title>
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <header>
         <div>
@@ -18,15 +20,18 @@
         <section class="intro">
             <div class="wrapper">
                 <h2>Welcome to Recipe Hero.</h2>
-                <p>"Lettuce" help you save dinner! Find delicious recipes based off the leftover food you already have in your fridge.</p> 
+                <p>"Lettuce" help you save dinner! Find delicious recipes based off the leftover food you already have
+                    in your fridge.</p>
                 <p>It's easy! Just follow the steps below and you'll be cooking in no time.</p>
             </div>
         </section>
         <section class="wrapper">
             <h2>Step 1: Select your groceries</h2>
-            <p>Choose the ingredients you want to include in your recipe search. Check the box to add the ingredient to the search, and uncheck the box to remove. You can open and close the category lists by selecting the "show/hide" buttons.</p>
+            <p>Choose the ingredients you want to include in your recipe search. Check the box to add the ingredient to
+                the search, and uncheck the box to remove. You can open and close the category lists by selecting the
+                "show / hide" buttons.</p>
             <form>
-                <section class="group"> 
+                <section class="group">
                     <section class="item">
                         <h3>Meat/Protein</h3>
                         <button type="button" class="button show">Show / Hide</button>
@@ -201,13 +206,15 @@
                             <label for="lentils">Lentils</label><br>
                             <input class="food" type="checkbox" id="black-beans" name="grains" value="black-beans">
                             <label for="black-beans">Black Beans</label><br>
-                            <input class="food" type="checkbox" id="garbanzo-beans" name="grains" value="garbanzo-beans">
+                            <input class="food" type="checkbox" id="garbanzo-beans" name="grains"
+                                value="garbanzo-beans">
                             <label for="garbanzo-beans">Garbanzo Beans</label><br>
                             <input class="food" type="checkbox" id="kidney-beans" name="grains" value="kidney-beans">
                             <label for="kidney-beans">Kidney Beans</label><br>
                             <input class="food" type="checkbox" id="pinto-beans" name="grains" value="pinto-beans">
                             <label for="pinto-beans">Pinto Beans</label><br>
-                            <input class="food" type="checkbox" id="cannellini-beans" name="grains" value="cannellini-beans">
+                            <input class="food" type="checkbox" id="cannellini-beans" name="grains"
+                                value="cannellini-beans">
                             <label for="cannellini-beans">Cannellini Beans</label><br>
                             <input class="food" type="checkbox" id="edamame" name="grains" value="edamame">
                             <label for="edamame">Edamame/Soybeans</label><br>
@@ -225,9 +232,11 @@
                             <label for="sour-cream">Sour Cream</label><br>
                             <input class="food" type="checkbox" id="cheddar-cheese" name="dairy" value="cheddar-cheese">
                             <label for="cheddar-cheese">Cheddar Cheese</label><br>
-                            <input class="food" type="checkbox" id="mozzarella-cheese" name="dairy" value="mozzarella-cheese">
+                            <input class="food" type="checkbox" id="mozzarella-cheese" name="dairy"
+                                value="mozzarella-cheese">
                             <label for="mozzarella-cheese">Mozzarella Cheese</label><br>
-                            <input class="food" type="checkbox" id="parmesan-cheese" name="dairy" value="parmesan-cheese">
+                            <input class="food" type="checkbox" id="parmesan-cheese" name="dairy"
+                                value="parmesan-cheese">
                             <label for="parmesan-cheese">Parmesan Cheese</label><br>
                             <input class="food" type="checkbox" id="swiss-cheese" name="dairy" value="swiss-cheese">
                             <label for="swiss-cheese">Swiss Cheese</label><br>
@@ -267,7 +276,8 @@
                             <label for="chicken-broth">Chicken Broth</label><br>
                             <input class="food" type="checkbox" id="beef-broth" name="other" value="beef-broth">
                             <label for="beef-broth">Beef Broth</label><br>
-                            <input class="food" type="checkbox" id="vegetable-broth" name="other" value="vegetable-broth">
+                            <input class="food" type="checkbox" id="vegetable-broth" name="other"
+                                value="vegetable-broth">
                             <label for="vegetable-broth">Vegetable Broth</label><br>
                             <input class="food" type="checkbox" id="soy-sauce" name="other" value="soy-sauce">
                             <label for="soy-sauce">Soy Sauce</label><br>
@@ -276,38 +286,45 @@
                 </section>
                 <br>
                 <section>
-                    
-                    <p>Warning, the "Reset Selections" button will clear out any ingredient selections and any recipe results!</p>
-                    <button type="reset" class="js-reset button">Reset Selections</button>
+                    <p>(Warning, the "Reset Selections" button will clear out any ingredient selections and any recipe
+                        results!)</p>
+                    <div class="right-align">
+                        <button type="reset" class="js-reset reset">Reset Selections</button>
+                    </div>
                 </section>
                 <section class="review">
                     <h2>Step 2: Review and Submit</h2>
                     <p>Here are your ingredients selected:</p>
+                    <div id="list-default">
+                        <p><b>(Please add at least one ingredient)</b></p>
+                    </div>
                     <ul id="selection-review">
                     </ul>
-                    <label for="num">Select the number of recipe results to display (from 1 to 30):</label>
+                    <label for="num">Select the number of recipe results to display (from 1 to 30):</label><br>
                     <input type="number" id="num" name="num" min="1" max="30" value="5">
                     <br><br>
                     <button type="submit" class="button">Find Me a Recipe!</button>
-                </section>     
+                </section>
             </form>
         </section>
-        
+
         <!--Error section-->
-        <section id = "error" class = "hidden wrapper">
+        <section id="error" class="hidden wrapper">
             <h3>Please select your ingredients!</h3>
         </section>
 
         <!--Results section-->
-        <section id = "results" class = "hidden">
-            <div class="wrapper">
+        <section id="results" class="hidden wrapper">
+            <div>
                 <h2>Step 3: Choose your recipe!</h2>
                 <ul id="results-list">
                 </ul>
             </div>
         </section>
-</main>
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
