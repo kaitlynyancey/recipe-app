@@ -5,5 +5,7 @@
 
 ### Link to App: [https://kaitlynyancey.github.io/recipe-app/](https://kaitlynyancey.github.io/recipe-app/)
 
+![alt text](https://github.com/kaitlynyancey/recipe-app/tree/master/pictures/Title.png)
+
 ### Technology Used
 HTML, CSS, JavaScript, jQuery
